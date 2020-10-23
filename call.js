@@ -1,15 +1,5 @@
 var request = require("request")
-i=0
-function doit() {
-	v = Math.random() * 100
-	url = "https://api.thingspeak.com/update?api_key=O3X7P4RDFR3DX97Z&field6="+ v
-	request(url, function(err, res, body) {
-		console.log(body)
-	})
-
-	console.log(`i=${i}`)
-	if (i++ > 20) return
-	setTimeout(doit, 20000)
-}
-console.log(`ready`)
-doit()
+request("127.0.0.1", function(err, res, body){
+	console.log(body)
+	console.log('hello')
+})
